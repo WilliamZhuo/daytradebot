@@ -65,7 +65,7 @@ def DayTradeBot():
         increase=max(lastCandle['Close']-lastCandle['Open'],\
                      lastCandle['Open']*0.02)
         #沒有上影線
-        upper_shadow=lastCandle['Close']-lastCandle['Open']
+        upper_shadow=lastCandle['High']-lastCandle['Close']
         cond3=upper_shadow<increase*0.05
         #確認股票可以當沖
         cond4=contract.day_trade.name=='Yes'
